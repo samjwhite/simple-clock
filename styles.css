@@ -1,0 +1,124 @@
+*, *::after,  *::before {
+  box-sizing:border-box;
+  font-family: Gotham Rounded, sans-serif;
+}
+
+body {
+  background-image: linear-gradient(to right, navy, purple);
+  font-size: 2rem;
+  display: flex;/*allows us to center the object, makes the object flexible*/
+  justify-content: center;/*centered  horizontally*/
+  align-items: center;/*centered horizontally*/
+  min-height: 100vh;/*centered vertically USE ALL THREE TO PERFECTLY CENTER THE OBJECT*/
+  overflow: hidden;/*scroll bar hidden*/
+
+}
+
+.clock {
+
+  height: 500px;
+  width: 500px;
+  background: white;
+  border: 2px solid;
+  border-radius: 50%;
+  position: relative;
+}
+
+.clock .number {
+  --rotation:0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+}
+
+.clock .number1 {
+  --rotation: 30deg;
+}
+
+.clock .number2 {
+  --rotation: 60deg;
+}
+
+.clock .number3 {
+  --rotation: 90deg;
+}
+
+.clock .number4 {
+  --rotation: 120deg;
+}
+
+.clock .number5 {
+  --rotation: 150deg;
+}
+
+.clock .number6 {
+  --rotation: 180deg;
+}
+
+.clock .number7 {
+  --rotation: 210deg;
+}
+
+.clock .number8 {
+  --rotation: 240deg;
+}
+
+.clock .number9 {
+  --rotation: 270deg;
+}
+
+.clock .number10 {
+  --rotation: 300deg;
+}
+
+.clock .number11 {
+  --rotation: 330deg;
+}
+
+.clock .hand {
+  --rotation:0;
+  position: absolute;
+  bottom: 50%;
+  left:50%;
+  /* width:10px;
+  height: 42%; */
+  background-color: black;
+  border: 1px solid white;
+  border-top-left-radius:10px;
+  border-top-right-radius: 10px;
+  transform-origin: bottom; //from where the transform starts
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation)*1deg)); //moves 50% of object's width left.centers.
+}
+
+.clock::after {
+  content:'';
+  position:absolute;
+  background-color: black;
+  z-index:11;
+  width:15px;
+  height:15px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);/*perfectly centered in the middle(-50% of the object demension)*/
+  border-radius: 100%;
+}
+
+/* second hand */
+.clock .hand.second {
+  width:3px;
+  height:40%;
+  background-color: red;
+}
+.clock .hand.minute {
+  width:7px;
+  height:38%;
+  background-color: black;
+}
+.clock .hand.hour {
+  width:10px;
+  height:33%;
+  background-color: black;
+}
